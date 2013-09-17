@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Twitter Trends Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script>
+      (function worker() {
+	$.ajax({
+	  url: 'static/test_trends.json', 
+	  success: function(data) {
+	    $('.result').html(data);
+	  },
+	  complete: function() {
+	    // Schedule the next request when the current one's complete
+	    // setTimeout(worker, 5000);
+	  }
+	});
+      })();
+    </script>
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+    <div class="result"></div>
+    <script src="static/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

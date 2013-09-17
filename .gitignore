@@ -1,4 +1,6 @@
 *.log
 *.pot
 *.pyc
+.*.sw*
 local_settings.py
+static/
